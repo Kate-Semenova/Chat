@@ -6,7 +6,7 @@
 
   <servlet>
     <servlet-name>Servlet</servlet-name>
-    <servlet-class>Chat</servlet-class>
+    <servlet-class>java.Chat</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Servlet</servlet-name>
@@ -15,7 +15,7 @@
 
   <servlet>
     <servlet-name>Auth</servlet-name>
-    <servlet-class>Auth</servlet-class>
+    <servlet-class>java.Auth</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Auth</servlet-name>

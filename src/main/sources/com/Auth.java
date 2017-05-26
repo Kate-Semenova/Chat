@@ -1,5 +1,6 @@
 package com;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import java.sql.SQLException;
 /**
  * Created by Екатерина on 26.05.2017.
  */
+@WebServlet(name = "Auth")
 public class Auth extends HttpServlet { private Database db = new Database();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

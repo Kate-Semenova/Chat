@@ -1,3 +1,4 @@
+package java;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -84,13 +85,15 @@ public class Database {
         try {
             if (latestN != null) {
                 PreparedStatement stmt = con.prepareStatement(
-                        "SELECT m.*, u.login FROM messages m JOIN users u ON m.user_id = u.id ORDER BY date DESC LIMIT ?"
+                        "SELECT m.*, u.login FROM messages m JOIN users u ON m.user_id = " +
+                                "u.id ORDER BY date DESC LIMIT ?"
                 );
                 stmt.setInt(1, Integer.parseInt(latestN));
                 result = stmt.executeQuery();
             } else {
                 PreparedStatement stmt = con.prepareStatement(
-                        "SELECT m.*, u.login FROM messages m JOIN users u ON m.user_id = u.id WHERE m.date >= ? ORDER BY date DESC"
+                        "SELECT m.*, u.login FROM messages m JOIN users u ON m.user_id = " +
+                                "u.id WHERE m.date >= ? ORDER BY date DESC"
                 );
                 stmt.setTimestamp(1, new Timestamp(System.currentTimeMillis() - 1200));
                 result = stmt.executeQuery();
